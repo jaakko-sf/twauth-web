@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %}start{% endblock %}
+{% block containercontent %}
+	    <h2>start</h2>
+    	<p>We've generated the OAuth request token (<code>{{ oauth_token }}</code>) and are ready for you to authorize <strong>twauth-web</strong>! Just click the button below, you'll be taken to Twitter to login (if you aren't already) and to grant access to <strong>twauth-web</strong>. Afterward you'll be redirected back to us.</p>
+    	<a href="{{ authorize_url }}?oauth_token={{ oauth_token }}" class="btn btn-small btn-success">Authorize twauth-web</a>
+{% endblock %}
