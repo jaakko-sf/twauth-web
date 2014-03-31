@@ -1,2 +1,4 @@
 venv
 *.pyc
+*.backup
+config.cfg
