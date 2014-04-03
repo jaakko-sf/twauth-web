@@ -11,4 +11,9 @@
 	    </ul>
 	    <p>That's it, there's nothing left for you in this demo. Now, because this is a demo and we don't want to access your data any longer, we've deleted our local copy of your token. You can be extra safe and revoke our token from your <a href="https://twitter.com/settings/applications">account settings</a> on Twitter.</p>
 	    <a href="/" class="btn btn-small btn-primary">Let me try again</a>
+	    <hr>
+  	  	<div>
+            <p><strong>What did we just do?</strong></p>
+            <pre class="small">We sent you to an <a href="https://dev.twitter.com/docs/api/1/get/oauth/authorize">authorization URL</a> at Twitter that included the temporary request token. When you authorized our app, Twitter redirected you back to our callback URL with our request token and a verifier parameter. When then called the <a href="https://dev.twitter.com/docs/api/1/post/oauth/access_token"><strong>{{ access_token_url }}</strong></a> endpoint with our application API key, API secret, the request token and the oauth_verifier from the callback. That endpoint provided us with an access token that we could then store and use for calling the APIs on your behalf.</pre>
+        </div>
 {% endblock %}

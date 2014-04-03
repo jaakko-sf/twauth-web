@@ -46,7 +46,7 @@ def start():
     oauth_token_secret = request_token['oauth_token_secret']
 
     oauth_store[oauth_token] = oauth_token_secret
-    return render_template('start.html', authorize_url=authorize_url, oauth_token=oauth_token)
+    return render_template('start.html', authorize_url=authorize_url, oauth_token=oauth_token, request_token_url=request_token_url)
 
 @app.route('/callback')
 def callback():
@@ -100,7 +100,7 @@ def callback():
     del oauth_store[oauth_token]
 
     return render_template('callback-success.html', screen_name=screen_name, user_id=user_id, name=name, 
-        friends_count=friends_count, statuses_count=statuses_count, followers_count=followers_count)
+        friends_count=friends_count, statuses_count=statuses_count, followers_count=followers_count, access_token_url=access_token_url)
 
 @app.errorhandler(500)
 def internal_server_error(e):
