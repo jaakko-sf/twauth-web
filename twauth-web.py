@@ -14,9 +14,9 @@ access_token_url = 'https://twitter.com/oauth/access_token'
 authorize_url = 'https://twitter.com/oauth/authorize'
 show_user_url = 'https://api.twitter.com/1.1/users/show.json'
 
-# These are placeholders. You should add your keys to config.cfg
-app.config['APP_CONSUMER_KEY'] = 'API_Key_from_Twitter'
-app.config['APP_CONSUMER_SECRET'] = 'API_Secret_from_Twitter'
+# Support keys from environment vars (heroku). You should add your keys to config.cfg
+app.config['APP_CONSUMER_KEY'] = os.getenv('TWAUTH_APP_CONSUMER_KEY', 'API_Key_from_Twitter')
+app.config['APP_CONSUMER_SECRET'] = os.getenv('TWAUTH_APP_CONSUMER_SECRET', 'API_Secret_from_Twitter')
 
 # config.cfg should look like:
 # APP_CONSUMER_KEY = 'API_Key_from_Twitter'
