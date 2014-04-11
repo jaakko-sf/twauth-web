@@ -53,6 +53,13 @@ def callback():
     # Accept the callback params, get the token and call the API to display this user's name and handle
     oauth_token = request.args.get('oauth_token')
     oauth_verifier = request.args.get('oauth_verifier')
+    oauth_denied = request.args.get('denied')
+
+    # if the oauth request was denied, delete our local token and show an error message
+    if oauth_denied:
+        if oauth_denied in oauth_store:
+            del oauth_store[oauth_denied]
+        return render_template('error.html', error_message="the OAuth request was denied by this user")
 
     if not oauth_token or not oauth_verifier:
         return render_template('error.html', error_message="callback param(s) missing")
