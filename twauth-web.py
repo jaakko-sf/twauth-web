@@ -41,7 +41,12 @@ def start():
         error_message = "Invalid response %s" % resp['status']
         return render_template('error.html', error_message=error_message)
 
-    request_token = dict(urlparse.parse_qsl(content))
+    request_token = {}
+    temp_request_token = dict(urllib.parse.parse_qs(content))
+    for key,value in temp_request_token.items():
+        request_token[key.decode("utf-8")] = value[0].decode("utf-8")
+        
+        
     oauth_token = request_token['oauth_token']
     oauth_token_secret = request_token['oauth_token_secret']
 
