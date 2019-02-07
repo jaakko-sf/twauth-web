@@ -1,17 +1,22 @@
 {% extends "base.html" %}
 {% block containercontent %}
-	    <p class="lead">Welcome to the twauth-web sample. This will show a basic demo of the standard Twitter 3-legged application authorization flow.</p>
-	    <div class="hero-unit">
-			<p>To get started, we'll need you to authorize twauth-web to access your Twitter account. More information on what is required is available from Twitter's <a href="https://dev.twitter.com/docs/auth/oauth">OAuth</a> overview.</p>
-			<p>Here's our plan:</p>
-			<ol>
-				<li>We're going to generate an OAuth request token that we will use when sending you to Twitter to grant us access.</li>
-				<li>Then we will redirect you to Twitter.com using our tokens from step 1, for you to authorize our app.</li>
-				<li>While at Twitter.com you will authorize twauth-web and you'll then be redirected back to us.</li>
-				<li>We will consume the OAuth params passed to our callback URL when you are redirected back to us. Using those params we will get your auth token from the Twitter API.</li>
-				<li>Finally, to confirm that all has been authorized, we'll call the Twitter API to get some information about the user who authorized the app to show we are able to retrieve this data on your behalf.</li>
-			</ol>
-		</div>	
-		<p>Ready to give this a shot?</p>
-		<a href="/start" class="btn btn-small btn-success">Let's Begin</a>
+<p class="lead">Welcome to the twauth-web sample. This will show a basic demo of the standard Twitter 3-legged
+	application authorization flow (also known as Sign in with Twitter).</p>
+<div class="hero-unit">
+	<p>To get started, we'll need you to authorize twauth-web to access your Twitter account. More information on what is
+		required is available from Twitter's <a href="https://developer.twitter.com/en/docs/basics/authentication/overview/oauth">OAuth</a>
+		overview.</p>
+	<p>Here's our plan:</p>
+	<ol>
+		<li>We're going to generate an OAuth request token that we will use when sending you to Twitter to grant us access.</li>
+		<li>Then we will redirect you to Twitter.com using our tokens from step 1, for you to authorize our app.</li>
+		<li>While at Twitter.com you will authorize twauth-web and you'll then be redirected back to us.</li>
+		<li>We will consume the OAuth params passed back to our callback URL. Using those values, we will then get your auth
+			token from the Twitter API.</li>
+		<li>Finally, to confirm that all has been authorized, we'll make an authenticated call to the Twitter API to get some
+			information about the user who authorized the app, to show we are able to retrieve this data on your behalf.</li>
+	</ol>
+</div>
+<p>Ready to give this a shot?</p>
+<a href="/start" class="btn btn-small btn-success">Let's Begin</a>
 {% endblock %}
