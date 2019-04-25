@@ -18,7 +18,7 @@ A simple Python + Flask web app that demonstrates the flow of obtaining a [Twitt
 
 Open a browser window on your demo app's external URL. Don't click the buttons yet!
 
-Finally, revisit the dev portal, and add your app's callback URL (`http[s]://your-deployed-url/callback`) to the callback URL whitelist setting. Once saved, follow the instructions on the app's web UI to click through the demo pages.
+Finally, revisit the dev portal, and add your app's callback URL (`https://your-deployed-url/callback`) to the callback URL whitelist setting. Once saved, follow the instructions on the app's web UI to click through the demo pages.
 
 ## Reference
 
