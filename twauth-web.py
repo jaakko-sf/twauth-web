@@ -116,7 +116,7 @@ def callback():
             status=real_resp['status'])
         return render_template('error.html', error_message=error_message)
 
-    response = json.loads(real_content)
+    response = json.loads(real_content.decode('utf-8'))
 
     friends_count = response['friends_count']
     statuses_count = response['statuses_count']
