@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+gunicorn = "*"
+"httplib2" = "*"
+itsdangerous = "*"
+"oauth2" = "*"
+Flask = "*"
+"Jinja2" = "*"
+MarkupSafe = "*"
+Werkzeug = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3"
